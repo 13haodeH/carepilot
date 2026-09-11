@@ -1,7 +1,7 @@
 # 阶段二十三工作记录：公开客服提效实验与部署准备
 
 - 记录日期：2026-09-11
-- 交付阶段：**匿名服务端分题、正式提交去重、公开静态前端与部署配置已实现并本地验证；Supabase 011 迁移已应用并核验，尚未完成 Netlify/Render 账户授权或公网发布。**
+- 交付阶段：**匿名服务端分题、正式提交去重、公开静态前端与部署配置已实现并验证；Supabase 011 迁移已应用，Render API 与 Netlify 正式实验入口已发布。**
 
 ## 1. 目标
 
@@ -21,9 +21,10 @@
 - 原型前端 `npm run build` 通过；公开静态页 `node --check app.js` 通过。
 - 用隔离 SQLite、本地 FastAPI 和静态页实走：首次说明 → 自动首题 → 服务端开始计时 → 选择处理方式与评分 → 提交 → 下一题。页面没有显示正确答案或技术指标。
 - 已将 `011_customer_efficiency_study.sql` 应用到现有 Supabase，并以只读查询确认三张 `customer_efficiency_*` 实验表存在；没有创建正式参与者或记录。
+- Render 健康检查返回 `storage: database-url`；CORS 预检只允许唯一 Netlify 正式入口。Netlify 公开页已核验为用户可读的说明页，且公开站点的 `.env.local`、内部文档和 `.git` 路径均返回 `404`。
 
 ## 4. 交付边界与待办
 
-- 本阶段没有写入远程研究数据、没有真实参与者或业务结果。
-- Netlify 和 Render 均需要账户授权；Render 还需要一个私有 Git 仓库作为源。服务端变量必须在 Render 控制台配置，不能从本地 `.env.local` 提交或复制到前端。
-- 公开链接、Render URL 和正式二维码必须在账户授权、迁移、环境变量配置与端到端公网验证后才能记录为已交付地址。
+- 本阶段没有写入远程研究结果、没有真实参与者或业务结果；公网核验只创建了未提交的匿名会话。
+- 已发布地址：Netlify `https://carepilot-efficiency-experiment.netlify.app/`；Render `https://carepilot-api-eoes.onrender.com`。唯一二维码为项目根目录的 `carepilot-efficiency-experiment.png`，只编码正式根链接。
+- 服务端目前只配置正式实验必需的 `DATABASE_URL` 与 `CORS_ALLOWED_ORIGINS`。若要使用内部 `PILOT` 数据或完整真实 Agent API，项目负责人仍需在 Render 安全配置中分别添加 `EFFICIENCY_PILOT_ACCESS_CODE`、Supabase Auth 与模型变量；这些变量不能提交或写入前端。
