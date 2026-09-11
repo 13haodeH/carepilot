@@ -1,0 +1,13 @@
+# Server-only credentials and local runtime state
+apps/api/.env.local
+apps/api/.venv/
+apps/api/*.db
+*.db
+
+# Frontend/build/deployment artifacts
+apps/web/node_modules/
+apps/web/dist/
+apps/web/.wrangler/
+apps/web/
+.netlify/
+.DS_Store

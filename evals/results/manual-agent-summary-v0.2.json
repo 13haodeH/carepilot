@@ -1,0 +1,34 @@
+{
+  "schema_version": "manual-agent-study-summary-v0.2",
+  "data_classification": "ANONYMOUS_SELF_AUTHORED_SYNTHETIC_TASK_STUDY",
+  "source": {
+    "records_file": "carepilot-manual-agent-records-v0.2.csv",
+    "records_sha256": "15431c89d3b2248f86369625943be39cf861e38036537d26eeeebdbfe5e3b93f",
+    "sus_file": "carepilot-manual-agent-sus-v0.2.csv",
+    "sus_sha256": "ccebc15c05cbe0fc79e6e2a89699932bbdb1384004880c6663faa62c5e806ade"
+  },
+  "scope": {
+    "anonymous_slots": 5,
+    "task_records": 20,
+    "manual_tasks": 10,
+    "agent_assisted_tasks": 10,
+    "sus_responses": 5
+  },
+  "metrics": {
+    "manual_mean_seconds": 21.7,
+    "agent_mean_seconds": 18.3,
+    "manual_mean_information_actions": 5.2,
+    "agent_mean_information_actions": 2.3,
+    "manual_mean_ease_1_to_7": 5.9,
+    "agent_mean_ease_1_to_7": 5.6,
+    "manual_correct_count": 10,
+    "agent_correct_count": 10,
+    "high_risk_gate_observed_count": 6,
+    "high_risk_count": 6,
+    "proposal_modified_count": 1,
+    "agent_high_risk_count": 3,
+    "sus_mean": 76.5,
+    "sus_median": 75.0
+  },
+  "interpretation_boundary": "Small-sample descriptive observation from self-authored synthetic tasks. It does not establish real service, business, causal, or statistical effects."
+}

@@ -1,0 +1,28 @@
+{
+  "pack_id": "public-policy-grounding-v0.2",
+  "base_pack_id": "public-policy-grounding-v0.1",
+  "grounding_verified_at": "2026-09-10T00:00:00Z",
+  "scope_note": "Adds one logistics-delay reference without modifying the preserved v0.1 baseline.",
+  "sources": [
+    {
+      "id": "PS-JD-LOGISTICS-DELAY",
+      "title": "商品未按预计时间送达的处理指引",
+      "publisher": "京东帮助中心",
+      "source_type": "PUBLIC_PLATFORM_POLICY",
+      "source_scope": "PUBLIC_POLICY_REFERENCE",
+      "source_url": "https://help.jd.com/user/issue/104-383.html",
+      "source_version_label": "公开帮助页核验 v2026.09.10（页面标示 2017-03-03）",
+      "source_published_at": "2017-03-03T00:00:00Z",
+      "source_excerpt": "该公开帮助页建议：商品未在预计时间送达时先查看订单物流；可联系配送员时先核实配送信息；没有配送信息时，自营商品联系在线客服，第三方商品联系商家客服。该指引不构成退款、补偿或改派承诺。",
+      "chunks": [
+        {
+          "chunk_key": "jd-logistics-delay-follow-up",
+          "category": "ALL",
+          "title": "物流延迟：查询与人工升级路径",
+          "content": "商品未按预计时间送达时，应先查询订单物流并核实配送信息；没有可用配送信息时，转由平台在线客服或商家客服处理。系统可自动创建物流查询跟进，不得据此自动承诺退款、补偿、改派或换货。",
+          "keywords": ["物流", "延迟", "未更新", "未到达", "配送", "催单", "配送员"]
+        }
+      ]
+    }
+  ]
+}

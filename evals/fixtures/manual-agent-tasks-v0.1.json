@@ -1,0 +1,30 @@
+{
+  "fixture_set": "self-authored-manual-agent-tasks-v0.1",
+  "data_classification": "SELF_AUTHORED_SYNTHETIC_NO_PII",
+  "source_note": "任务、订单和政策情境均为 CarePilot 可用性实验准备自构造，不含真实用户或业务结果。",
+  "atomic_steps": {
+    "order_lookup": "核验订单与归属",
+    "logistics_track": "查询物流节点",
+    "policy_lookup": "检索适用政策依据",
+    "evidence_request": "请求缺失材料或补拍",
+    "evidence_review": "复核补充材料",
+    "task_create": "创建后续处理任务",
+    "ticket_update": "更新工单状态",
+    "customer_notify": "通知用户处理进度",
+    "agent_context_review": "阅读 Agent 汇总、依据与 Tool Trace",
+    "proposal_review": "审批、修改、拒绝或接管高风险 Proposal",
+    "resolution_confirm": "确认工单最终状态与通知"
+  },
+  "pairs": [
+    {"pair_id":"MVA-01","category":"DIGITAL","scenario":"LOGISTICS_DELAY","risk":"LOW","target_outcome":"RESOLVED","manual_task":{"id":"MVA-01-M","condition":"MANUAL","participant_steps":["order_lookup","logistics_track","policy_lookup","task_create","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-01-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}},
+    {"pair_id":"MVA-02","category":"DIGITAL","scenario":"MISSING_PART","risk":"HIGH","target_outcome":"WAITING_REVIEW","manual_task":{"id":"MVA-02-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_review","task_create","ticket_update","customer_notify","proposal_review"]},"agent_task":{"id":"MVA-02-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","proposal_review","resolution_confirm"]}},
+    {"pair_id":"MVA-03","category":"DIGITAL","scenario":"DAMAGED_ITEM","risk":"HIGH","target_outcome":"WAITING_REVIEW","manual_task":{"id":"MVA-03-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_review","task_create","ticket_update","customer_notify","proposal_review"]},"agent_task":{"id":"MVA-03-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","proposal_review","resolution_confirm"]}},
+    {"pair_id":"MVA-04","category":"DIGITAL","scenario":"POLICY_WINDOW","risk":"MEDIUM","target_outcome":"NEED_INFO","manual_task":{"id":"MVA-04-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_request","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-04-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}},
+    {"pair_id":"MVA-05","category":"APPAREL","scenario":"SIZE_MISMATCH","risk":"MEDIUM","target_outcome":"NEED_INFO","manual_task":{"id":"MVA-05-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_request","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-05-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}},
+    {"pair_id":"MVA-06","category":"APPAREL","scenario":"RETURN_WINDOW","risk":"LOW","target_outcome":"RESOLVED","manual_task":{"id":"MVA-06-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-06-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}},
+    {"pair_id":"MVA-07","category":"APPAREL","scenario":"WRONG_ITEM","risk":"MEDIUM","target_outcome":"NEED_INFO","manual_task":{"id":"MVA-07-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_request","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-07-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}},
+    {"pair_id":"MVA-08","category":"HOME","scenario":"LOGISTICS_DELAY","risk":"LOW","target_outcome":"RESOLVED","manual_task":{"id":"MVA-08-M","condition":"MANUAL","participant_steps":["order_lookup","logistics_track","policy_lookup","task_create","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-08-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}},
+    {"pair_id":"MVA-09","category":"HOME","scenario":"DAMAGED_ITEM","risk":"HIGH","target_outcome":"WAITING_REVIEW","manual_task":{"id":"MVA-09-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_review","task_create","ticket_update","customer_notify","proposal_review"]},"agent_task":{"id":"MVA-09-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","proposal_review","resolution_confirm"]}},
+    {"pair_id":"MVA-10","category":"HOME","scenario":"MISSING_PART","risk":"MEDIUM","target_outcome":"NEED_INFO","manual_task":{"id":"MVA-10-M","condition":"MANUAL","participant_steps":["order_lookup","policy_lookup","evidence_request","ticket_update","customer_notify"]},"agent_task":{"id":"MVA-10-A","condition":"AGENT_ASSISTED","participant_steps":["agent_context_review","resolution_confirm"]}}
+  ]
+}

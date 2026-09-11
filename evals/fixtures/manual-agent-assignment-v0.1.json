@@ -1,0 +1,28 @@
+{
+  "assignment_set": "self-authored-manual-agent-assignment-v0.1",
+  "data_classification": "SYNTHETIC_ANONYMOUS_PARTICIPANT_SLOTS_ONLY",
+  "source_note": "P01 至 P05 是待招募的匿名分配槽位，不是实际参与者或实验结果。每个槽位 4 条任务、各 2 条 Manual 与 Agent-assisted；每对场景的两个条件分配给不同槽位。",
+  "participant_slots": ["P01", "P02", "P03", "P04", "P05"],
+  "assignments": [
+    {"participant_slot":"P01","round":1,"pair_id":"MVA-01","task_id":"MVA-01-M","condition":"MANUAL"},
+    {"participant_slot":"P01","round":2,"pair_id":"MVA-05","task_id":"MVA-05-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P01","round":3,"pair_id":"MVA-06","task_id":"MVA-06-M","condition":"MANUAL"},
+    {"participant_slot":"P01","round":4,"pair_id":"MVA-10","task_id":"MVA-10-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P02","round":1,"pair_id":"MVA-01","task_id":"MVA-01-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P02","round":2,"pair_id":"MVA-02","task_id":"MVA-02-M","condition":"MANUAL"},
+    {"participant_slot":"P02","round":3,"pair_id":"MVA-06","task_id":"MVA-06-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P02","round":4,"pair_id":"MVA-07","task_id":"MVA-07-M","condition":"MANUAL"},
+    {"participant_slot":"P03","round":1,"pair_id":"MVA-03","task_id":"MVA-03-M","condition":"MANUAL"},
+    {"participant_slot":"P03","round":2,"pair_id":"MVA-02","task_id":"MVA-02-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P03","round":3,"pair_id":"MVA-08","task_id":"MVA-08-M","condition":"MANUAL"},
+    {"participant_slot":"P03","round":4,"pair_id":"MVA-07","task_id":"MVA-07-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P04","round":1,"pair_id":"MVA-04","task_id":"MVA-04-M","condition":"MANUAL"},
+    {"participant_slot":"P04","round":2,"pair_id":"MVA-03","task_id":"MVA-03-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P04","round":3,"pair_id":"MVA-09","task_id":"MVA-09-M","condition":"MANUAL"},
+    {"participant_slot":"P04","round":4,"pair_id":"MVA-08","task_id":"MVA-08-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P05","round":1,"pair_id":"MVA-04","task_id":"MVA-04-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P05","round":2,"pair_id":"MVA-05","task_id":"MVA-05-M","condition":"MANUAL"},
+    {"participant_slot":"P05","round":3,"pair_id":"MVA-09","task_id":"MVA-09-A","condition":"AGENT_ASSISTED"},
+    {"participant_slot":"P05","round":4,"pair_id":"MVA-10","task_id":"MVA-10-M","condition":"MANUAL"}
+  ]
+}

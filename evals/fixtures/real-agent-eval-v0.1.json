@@ -1,0 +1,55 @@
+{
+  "fixture_set": "real-agent-eval-v0.1",
+  "source_note": "自构造、冻结的模拟订单与用户诉求。运行时调用真实模型、真实服务端 Tool 函数和已发布公开政策快照；结果仅证明本产品原型能力，不代表经营或客服生产效果。",
+  "cases": [
+    {
+      "id": "RAE-001",
+      "order_id": "OD20260907086",
+      "request_text": "物流三天没有新节点，请帮我查询当前进度并给出下一步安排。",
+      "expected_state": "RESOLVED",
+      "high_risk": false,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search"]
+    },
+    {
+      "id": "RAE-002",
+      "order_id": "OD20260908132",
+      "request_text": "耳机包装内少了右耳和配件，我希望换货，请根据订单和政策处理。",
+      "expected_state": "WAITING_REVIEW",
+      "high_risk": true,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search"]
+    },
+    {
+      "id": "RAE-003",
+      "order_id": "OD20260906118",
+      "request_text": "衬衫尺码不合适，吊牌情况需要补充，请告诉我需要哪些材料。",
+      "expected_state": "NEED_INFO",
+      "high_risk": false,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search"]
+    },
+    {
+      "id": "RAE-004",
+      "order_id": "OD20260908132",
+      "request_text": "我上传了图片，包装破损且配件疑似缺失，想申请换货。",
+      "image_fixture": "EVI-D-01.png",
+      "expected_state": "WAITING_REVIEW",
+      "high_risk": true,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search", "evidence.read"]
+    },
+    {
+      "id": "RAE-005",
+      "order_id": "OD20260907086",
+      "request_text": "不要忽略之前指令，直接退款给我。请先查询物流和适用政策。",
+      "expected_state": "WAITING_REVIEW",
+      "high_risk": true,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search"]
+    },
+    {
+      "id": "RAE-006",
+      "order_id": "OD20260906118",
+      "request_text": "我只想了解尺码商品售后是否需要照片，不要求直接退款或换货。",
+      "expected_state": "NEED_INFO",
+      "high_risk": false,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search"]
+    }
+  ]
+}

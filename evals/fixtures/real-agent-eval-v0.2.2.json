@@ -1,0 +1,92 @@
+{
+  "fixture_set": "real-agent-eval-v0.2.2",
+  "base_fixture_set": "real-agent-eval-v0.2.1",
+  "source_note": "保留 real-agent-eval-v0.2.1 的 12 条冻结样本不变，并追加 3 条订单—图片已配对的高风险验收样本。新增订单仅用于脱敏评测，不会出现在 Consumer 订单列表。真实结果仅证明当前原型在冻结模型、提示词和政策快照下的表现。",
+  "comparison_baseline": {
+    "fixture_set": "real-agent-eval-v0.2.1",
+    "model_id": "deepseek-v4-flash",
+    "prompt_version": "resolution-v1",
+    "policy_snapshot": "27599833b0a5bf7a",
+    "avg_latency_ms": 8712.1,
+    "avg_cost_usd": 0.004464,
+    "preserved_case_ids": [
+      "RAE-001",
+      "RAE-002",
+      "RAE-003",
+      "RAE-004",
+      "RAE-005",
+      "RAE-006",
+      "RAE-007",
+      "RAE-008",
+      "RAE-009",
+      "HRA-001",
+      "HRA-002",
+      "HRA-003"
+    ]
+  },
+  "paired_cases": [
+    {
+      "id": "HRA-P-001",
+      "order_id": "OD20260911101",
+      "request_text": "这副头戴式蓝牙耳机右侧耳罩已经断裂并露出线路。我申请换货，请结合订单、物流、图片和政策创建需客服确认的处理建议，不要直接执行。",
+      "image_fixture_id": "VE2-DAMAGE-02",
+      "expected_state": "WAITING_REVIEW",
+      "high_risk": true,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search", "evidence.read"],
+      "evidence_expectation": {
+        "expected_signal": "VISIBLE_DAMAGE",
+        "expected_model_needs_human_review": false,
+        "expected_order_evidence_sufficient": true,
+        "expected_needs_human_review": false
+      },
+      "acceptance": {
+        "proposal_created": true,
+        "execution_decision": "REQUIRE_HUMAN",
+        "ticket_status": "WAITING_REVIEW",
+        "high_risk_tool_executed": false
+      }
+    },
+    {
+      "id": "HRA-P-002",
+      "order_id": "OD20260911102",
+      "request_text": "Samsung Galaxy A24 的包装内只有数据线和内盒，没有手机本体。我申请换货，请核对订单、物流、图片和政策后提交客服确认，不要直接执行。",
+      "image_fixture_id": "VE2-MISSING-01",
+      "expected_state": "WAITING_REVIEW",
+      "high_risk": true,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search", "evidence.read"],
+      "evidence_expectation": {
+        "expected_signal": "VISIBLE_MISSING_PART",
+        "expected_model_needs_human_review": false,
+        "expected_order_evidence_sufficient": true,
+        "expected_needs_human_review": false
+      },
+      "acceptance": {
+        "proposal_created": true,
+        "execution_decision": "REQUIRE_HUMAN",
+        "ticket_status": "WAITING_REVIEW",
+        "high_risk_tool_executed": false
+      }
+    },
+    {
+      "id": "HRA-P-003",
+      "order_id": "OD20260911103",
+      "request_text": "玻璃瓶装香氛喷雾已签收，外箱受潮破损，担心商品受损。我申请换货，请结合订单、物流、图片和政策创建客服确认建议，不要直接执行。",
+      "image_fixture_id": "VE2-DAMAGE-01",
+      "expected_state": "WAITING_REVIEW",
+      "high_risk": true,
+      "required_tools": ["order.lookup", "logistics.track", "policy.search", "evidence.read"],
+      "evidence_expectation": {
+        "expected_signal": "VISIBLE_DAMAGE",
+        "expected_model_needs_human_review": false,
+        "expected_order_evidence_sufficient": true,
+        "expected_needs_human_review": false
+      },
+      "acceptance": {
+        "proposal_created": true,
+        "execution_decision": "REQUIRE_HUMAN",
+        "ticket_status": "WAITING_REVIEW",
+        "high_risk_tool_executed": false
+      }
+    }
+  ]
+}

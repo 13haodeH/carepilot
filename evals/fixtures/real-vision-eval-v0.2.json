@@ -1,0 +1,233 @@
+{
+  "fixture_set": "real-vision-eval-v0.2",
+  "source_note": "项目负责人确认的 20 张无个人信息图片；技术检查未发现 EXIF。目录标签仅作为冻结评测期望，不会提供给真实 Agent。",
+  "folder_counts": {
+    "明显破损": 5,
+    "明显缺件": 4,
+    "包装破损状态不确定": 5,
+    "模糊遮挡证据不足": 3,
+    "与投诉内容不一致": 3
+  },
+  "files": [
+    {
+      "id": "VE2-DAMAGE-01",
+      "relative_path": "明显破损/ONntbyQmGORIwYhEAmVaMBgUR9k2tlwKBRH_Dh-salYUXqTIxYmQQOf8ByyZi2OnSllxJQgxqss00tjCdXOYEdrRerczcGWFpnKLorp7Y5555X-g5U3sLY9LWad7pVNWZMv1S69ONhvhpY9D7iCVnsb8CE-4NYdRetGUxXbywki1naEoUjRf5zQBHaxXNFI1.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "e8f9ef8b888b6f847b63265f196329e2533598c86ca5359090744b093d050d7b",
+      "input_byte_size": 168797,
+      "width": 675,
+      "height": 1200,
+      "expected_signal": "VISIBLE_DAMAGE",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-DAMAGE-02",
+      "relative_path": "明显破损/YplkGFHfd8ydulc_Gmd_vXdkpiqNOkfCNSYRVKRGBRo7X6Hwh8MV-Pnpjyh2CDelMbu6XTfs9DfBCYS5ubGvBrgUZXjcMQfiWe8V1K51dvXPPw0GfctPwaX_UY8zqcB2eUHLtJ0eDIaTdgc3X73tC_V3TC98Q_euybnZqEwo1xG3Zm48TQYD9u17bGspinXE.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "e5b8aa2bc31ffa9506c27c23caba1064699ad364fcf7f38034b6303e265dedb6",
+      "input_byte_size": 29501,
+      "width": 768,
+      "height": 768,
+      "expected_signal": "VISIBLE_DAMAGE",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-DAMAGE-03",
+      "relative_path": "明显破损/ZlFLctlM6nJOkFqkYoXgzlNop3Coj2Mb4v6n6XJ0Q98niWdP4sb-bRP8cbTiYtRcrd__qIUfSJet9naj4tsoVb0lYbzsrIQV827MzF_48gEMhLmGGxDFv4jgGf-spJrk4uWcIELaaRoIc9HCt3EF7YZG24oQ13-qLNNLDXT72zCLee_op40ucNlyu_nshFrf.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "567c67bdf8f88e7696c094d8a3f8d85bff11c4752235d940aa7df731be80f342",
+      "input_byte_size": 170945,
+      "width": 1224,
+      "height": 1632,
+      "expected_signal": "VISIBLE_DAMAGE",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-DAMAGE-04",
+      "relative_path": "明显破损/fgJ_93Ek9Z3GR0ZmFjO7dLX4MpiVNXtTuteSkJR8IO8qehcRP5cXZN90A4ypDFa0gk1rbWhb0TcLP0bY6q81BFO1UDFDe7GuE7RZkiRg313z2o7LaCG9XNz1v-cqyxmsXxLdsfL2MXW6lRhM6zwyht7mvP7XwJ7uMISno49Pn8nYLTGZGjtPq9tINmk70UWr.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "53b0088645022e55591903f85c7afbdb88bf4533e056bbb5a48209397ee829eb",
+      "input_byte_size": 192428,
+      "width": 1536,
+      "height": 1024,
+      "expected_signal": "VISIBLE_DAMAGE",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-DAMAGE-05",
+      "relative_path": "明显破损/lmAABQwvJ4vIqjhipitYU06Kb5MPP1fbmx7nBWec8R867xMOoYJgidmuaHscXKA7JAy1wM-EjlmxE6ri_mbRrYg2KvAYEjtGhdnqeXRCCsxr9F8hlqtkbtipF3wUOdC6eraRsCmW-wg7p4xYZ0Dwu2J2BiIps6OY5DPD46-iALHNLe2SJ7zIGZCPjmXUOEvC.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "48e79696a66ff98ee9a200f2ae3a09ba227a22e484833709a7cb56b30f17c877",
+      "input_byte_size": 176606,
+      "width": 1200,
+      "height": 800,
+      "expected_signal": "VISIBLE_DAMAGE",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-MISSING-01",
+      "relative_path": "明显缺件/05-OTja10ff8qrEdBd_Q3LI6svvlhj5o_KjvF7jR3aHKXTkPH7X9Q3HoaLHvmAsnU1Fp0oP7sT6G35efHNLeHocUePFKrxaDb5_i9GCVdJLnAPpkRKJ_KoidhRWU0F0MWZ4GmGX6i5kUIHOsj1RNgklv6TbnaS6sOG8-BDFbZO6d2gydaOos-SEm3H9kD9a8.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "b1b5f3063b6e5542c7834bf59a6bc622009e42504f039441e9573fd3cfeff15e",
+      "input_byte_size": 65456,
+      "width": 768,
+      "height": 768,
+      "expected_signal": "VISIBLE_MISSING_PART",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-MISSING-02",
+      "relative_path": "明显缺件/9sl3unLOzL-3BsBkybf03AbWLTx0sX03NUti0rOn7a6kIteKEnixV_CxZX-o78Ty1SirynvS_7bJyKq43Dvng6WQimDmqZ1SLtb-u8vSAK3MKT0NOmeO7qJr4lsUBkhD0Vp3Exmzt45D1ElvLy5IoUhMtMSjaZYT23SAyE37zORTpWou0ZpHL2O_zrtgw0Qz.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "2e66c02f8462cad650703b3919b86f9f7324002628e9a68fd215ba16a532e34d",
+      "input_byte_size": 60359,
+      "width": 768,
+      "height": 768,
+      "expected_signal": "VISIBLE_MISSING_PART",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-MISSING-03",
+      "relative_path": "明显缺件/SVWL35qnzVuWfXE8pF70eWpkfasvpXAhax-726I2gHon381FLEbFFG5cG8R0XFW31c70zf7iifzOtAg8EOOhmIDSyQtN7ZOBF1UIKU-M4gpIuyjBV_MrrYvZF0M-cFU8JOTSbE6DSurCywbnLdCTXF9r-OTqY9YtXBWdpWOFHVLCJHPKjMVJl30i33EdMZg8.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "c510381babe8b67ed0c512064b5982bf6acf1b1ee42818e0f949e24d8c586341",
+      "input_byte_size": 805118,
+      "width": 4032,
+      "height": 3024,
+      "expected_signal": "VISIBLE_MISSING_PART",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-MISSING-04",
+      "relative_path": "明显缺件/yPQQ6BEPDH8DlqwY1dMDEUJl3PLy_qzOYIPA30WbXTbgzvT4GSVld_KVIFsv5L6PSJZBU2N1hnTZdYKQ44piG9CBshrntYM23H1NL25nQcwaZBtYcjCDpdTMXD2qKCMV4sGZhhFeDQH01aKg6hZv1Fn2syJITuCOmTZm-tn8Nj7CXgG6gx10Ut3kx1Ty5xx3.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "50d5764d1fba61cd225812b6655a6517ea19a505ada68e1b71b26503c17955a3",
+      "input_byte_size": 152552,
+      "width": 1200,
+      "height": 1063,
+      "expected_signal": "VISIBLE_MISSING_PART",
+      "expected_needs_human_review": false
+    },
+    {
+      "id": "VE2-PACKAGING_UNCERTAIN-01",
+      "relative_path": "包装破损状态不确定/ATdbaRvJ8HYd5mpRVc0IQcDfejNypn_En7PFO7mML1NuWVGCWrFxbmbmCi8z68BjNi0w6Wjq8nMEgLzhfdZZ6nS-_zs8of5lySwB1ekoQfR8VRfEHx3cAbYjQATDebScc8aQxEhKEofwQJP8E8NPnQW09mzUWCYVE6XOgtxBFSbUZRj7H_hjtTrRNCSwZSdE.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "aca8d28b023939cae27b83ee36be5681a2a98fc4d9618129f7c6013adffaf16a",
+      "input_byte_size": 262626,
+      "width": 1126,
+      "height": 1500,
+      "expected_signal": "PACKAGING_UNCERTAIN",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-PACKAGING_UNCERTAIN-02",
+      "relative_path": "包装破损状态不确定/CRbaG7uECAzluBrbZztC5gwEdszC1UFtWVCdguKTYPAm1_gl2WPO-9G5ZD8V6OX99PqPpeOmpfla9lglfB2gNkqFoYevHvlAFryTDKThcQ1MV3Tzm8rcypi4gQhV_so3I2TUonQMKaBBoehDM3STRuBD8jTHVHqXIlW7KzG4Xwi67NAAbeszqgVfXY42YcK_.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "8bd54801bc576995757cfa9add13c977fe8dd0ec63698cd55bfbcd0803048251",
+      "input_byte_size": 28564,
+      "width": 768,
+      "height": 400,
+      "expected_signal": "PACKAGING_UNCERTAIN",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-PACKAGING_UNCERTAIN-03",
+      "relative_path": "包装破损状态不确定/RDAMpsNYEG9LoEyztG-wtfk8nrQGyZYzD0ryeJTv_bO9Vj-6GfEvpgzcn9XBEas4wHsKDa0e7hkvOjtB048AQkCacbR1ESvFTTyl08K0X29B8ZgcEpkOKWszEHWm5HgiPb5Y1pFbzIiFt6rySOCdcroarA3sfEPZoZtvipXw0P9qSeTotziH8T6XYt6vXAHy.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "2f6043be8f60576372a2b9963d28f5dd2d7787fc80c20b32af65502154adf6dc",
+      "input_byte_size": 270383,
+      "width": 2016,
+      "height": 1512,
+      "expected_signal": "PACKAGING_UNCERTAIN",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-PACKAGING_UNCERTAIN-04",
+      "relative_path": "包装破损状态不确定/gTEMxMIEYZepvF9hJxenj2vcbKWwueHIVlPwgrKWTpOATBcQgPXAdJEPHctJbJCcRFtNutI0hrPpo9DjROAEL9SrisBHoM0xoZvS1uKbDxf4MyyWuUgYPd61EaVbtToQD1BNKGqyoNOgEMZWrVY5fVGmrBNYXVlxjLE6nqHDA_9M1ONgj2996mMJu8yEIndc.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "679876f9a3da8e53d340db10d3e57521b5d3db35926596c42de8ccbd7a3f0596",
+      "input_byte_size": 120129,
+      "width": 2000,
+      "height": 1500,
+      "expected_signal": "PACKAGING_UNCERTAIN",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-PACKAGING_UNCERTAIN-05",
+      "relative_path": "包装破损状态不确定/znDdTt2zHryVNGtgZK9aIcuJWbbXibL1f2GNxPEUCyWZu59bU0k_UjMXtqptDO13E5GM8Uc34WtKEDEb2rY6NmEKRHnJ5yHy8By0lREzpwQIxiFU44cOTEhBOkR3YK36Z5TdH9A2XHrE1nNp8dCwScnk2cEO_X006IKNQhJ-U2nPBnlK8SZQwQ6E4MOGN5MQ.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "6cb5c7d6a2c12f503707601301cd7352a1939aa5c16a20ec729ff8d09dc9149c",
+      "input_byte_size": 56994,
+      "width": 800,
+      "height": 600,
+      "expected_signal": "PACKAGING_UNCERTAIN",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-INSUFFICIENT-01",
+      "relative_path": "模糊遮挡证据不足/6qJU4zSkFLtGZB5kLeIsEsGTUR-P2pYRNyqaXHLovfDKbVxYKLimpgsk68GTiKA2QQt6f8WGrHEe8DhNYzjWOWOSc4lGPOxfFnnBWbcXmDUc4eYwVpC3NmZgzO02VRuYXUmL9Sr7Qvy-pwYLMxGDvJ8ZHyXTgNi7KD4Jcxf0F42MGlwc9T0f5VoQ8hqa6094.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "2b215fa1ff58bb6a064a60e97c2b521336e755b31585afda49134c2c5414faaa",
+      "input_byte_size": 129876,
+      "width": 2048,
+      "height": 1365,
+      "expected_signal": "INSUFFICIENT_EVIDENCE",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-INSUFFICIENT-02",
+      "relative_path": "模糊遮挡证据不足/9AKSpXhRERXLAPbpz8a6bXX7fITn56b8XsoPUJD7IOTqb1uAkBoA7x2eUhYc008GLWw_hSjb0e8cozodyDMaB1pwYCCuJlnx_RsDOaHtW-wRmZIwSsu7SRa9VDT4yzsBqRyV3M3kDZslzGhkhPfIGQngUyfOtiUr4siNt0l_tB3tl3ktEWeJ04YVjQpJx_Rs.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "898005d3a192144436e4e471c3433f5537110f0400a2b075cac8fe3b101ec734",
+      "input_byte_size": 64240,
+      "width": 900,
+      "height": 1200,
+      "expected_signal": "INSUFFICIENT_EVIDENCE",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-INSUFFICIENT-03",
+      "relative_path": "模糊遮挡证据不足/wPNN6OrE8JlDnsq4YKdBWp-Vb8frnvloDQPWSoNWfJJg6oBLLknTTUqOi5kF5MX6A0izthYzAaWp3sOJhCx0W0NDIBtxDhuV8nNRIs0Pb2NtzoNglqWYst9XAL_9ZVtehsC0s4WyMd1CruQKphBb0-rSR9NDr42b8vvnrbzFNzRrLagTPCIonsvXLAsR4xHP.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "b94ca747af63d395f221251cf56d4881903fbc182cc1093ccce5fb74fd3ab919",
+      "input_byte_size": 181361,
+      "width": 1500,
+      "height": 2000,
+      "expected_signal": "INSUFFICIENT_EVIDENCE",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-MISMATCH-01",
+      "relative_path": "与投诉内容不一致/OEJAyf1iUYKJv7ug8pa81BpQZ84KKBuftlQexCdChwdpvUfQHE2gvfbL4PwWL-_gdP7SSjHjjuluUmO2qRrviv_0HKh6Q_vN_umyzhKWUPIZE4vGiGKXYTxsCjVMCsnmN0d4l67MTvkABUncJq4iVMVnVzEP0PitmXNROKqmFpF9GyEe8XPKDIPKA6db1sab.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "26ef7bfc333812333c84b0796b854c6950c8ae96e31f9c1f97e8eaff136139b3",
+      "input_byte_size": 262766,
+      "width": 1500,
+      "height": 2000,
+      "expected_signal": "COMPLAINT_MISMATCH",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-MISMATCH-02",
+      "relative_path": "与投诉内容不一致/cd_AhN8VkQnomnbQwS7Ck9_3w9vAkNUyJsKapx24E3gGyknvAmOKtyqhF3WdVvH6sEbuF7q-J7pyJAz_QXCqeM0S17XRcOnYytiQulAYs3j89G4Pel2q8q8tQHNfcw2Ihg30IZhLqBeYTu3FEEeN5TDrSnwGqEzMdtPOcP-NQvbZDfVSlRALFUlLf46Z9M7u.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "c6a67b6baf64cabadda315427b5edbc7347bf21baa35501a024c8c7c0bb4f0dc",
+      "input_byte_size": 379163,
+      "width": 2048,
+      "height": 2048,
+      "expected_signal": "COMPLAINT_MISMATCH",
+      "expected_needs_human_review": true
+    },
+    {
+      "id": "VE2-MISMATCH-03",
+      "relative_path": "与投诉内容不一致/pIk_68RHRcS3f1-Aarhyk73qwZSU_2HLSqHryNY9pDCC7wHHWPre3o63hR9VCdHqld3QfT1ZQdPYTQjjUHHLUjVZtT7VNasvBjZul5z2bnWhHAoHCMgtBCTe-AerGy-L1sj8cul65QpP--koKRCh2jHItya270Kk_omDOw8_SwSIfn4i6T_RdlQqjZX3FK7A.jpg",
+      "content_type": "image/jpeg",
+      "input_sha256": "676a25406c24f147407d6d8abe40b0975f7c7b0434b9b73c4c3f29120eebcc43",
+      "input_byte_size": 78339,
+      "width": 903,
+      "height": 1200,
+      "expected_signal": "COMPLAINT_MISMATCH",
+      "expected_needs_human_review": true
+    }
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "fixture_set": "self-authored-evidence-v0.1",
+  "source_note": "30 张图片均为本脚本生成的抽象栅格测试图，不含人物、地址、订单、品牌或第三方素材；标注仅用于文件链路测试，不是视觉模型评测或真实 Evidence 结论。",
+  "files": [
+    {
+      "id": "EVI-D-01",
+      "category": "DIGITAL",
+      "scenario": "MISSING_PART",
+      "filename": "EVI-D-01.png",
+      "content_type": "image/png",
+      "input_sha256": "1a420f6e1b7f11d5fc196b1c72a90b18597ff3e79504c01b73aa4646f135f54f",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": "模拟缺少部件",
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-02",
+      "category": "DIGITAL",
+      "scenario": "DAMAGED_ITEM",
+      "filename": "EVI-D-02.png",
+      "content_type": "image/png",
+      "input_sha256": "1e041c9049d7028d73ea40e84f669c9bda126b6ed31d6a7d914b0517ef8e9311",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-03",
+      "category": "DIGITAL",
+      "scenario": "SCREEN_DEFECT",
+      "filename": "EVI-D-03.png",
+      "content_type": "image/png",
+      "input_sha256": "1d964a75abbfb8b66037c81861d8db5682670d70469b9d8f6ff9e7dd82490a1c",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-04",
+      "category": "DIGITAL",
+      "scenario": "POWER_FAILURE",
+      "filename": "EVI-D-04.png",
+      "content_type": "image/png",
+      "input_sha256": "f02c82bdabb5ac1c0a582b89c514c3ee659e2217b54e1683e40bd12968783f64",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-05",
+      "category": "DIGITAL",
+      "scenario": "PACKAGING_DAMAGE",
+      "filename": "EVI-D-05.png",
+      "content_type": "image/png",
+      "input_sha256": "586fd9b0b356144a999c0364a25570127761ef723c1e0a4626708c59e032d8be",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-06",
+      "category": "DIGITAL",
+      "scenario": "WRONG_ITEM",
+      "filename": "EVI-D-06.png",
+      "content_type": "image/png",
+      "input_sha256": "b6d3c704a268daec5931df893365d55c42ed66540d420fed4b89d10ddf22f4d5",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-07",
+      "category": "DIGITAL",
+      "scenario": "SEAL_BROKEN",
+      "filename": "EVI-D-07.png",
+      "content_type": "image/png",
+      "input_sha256": "92427de0f65a90acfb2cb6d3838ec32f2d614b035bcce372168bfaa7d665be36",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-08",
+      "category": "DIGITAL",
+      "scenario": "ACCESSORY_MISMATCH",
+      "filename": "EVI-D-08.png",
+      "content_type": "image/png",
+      "input_sha256": "fdae8c8ba9b4bd16906124acff593b006265aac46e6529159d6e964ce7a5de81",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": "模拟缺少部件",
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-09",
+      "category": "DIGITAL",
+      "scenario": "LABEL_CHECK",
+      "filename": "EVI-D-09.png",
+      "content_type": "image/png",
+      "input_sha256": "5eede8cf7d90e36ac3fe4b086a2218505964ecc18c6377b44d5a9e221c2d8aeb",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-D-10",
+      "category": "DIGITAL",
+      "scenario": "QUALITY_UNCLEAR",
+      "filename": "EVI-D-10.png",
+      "content_type": "image/png",
+      "input_sha256": "8d0f30ddde7b42e5ae8b30e7a418fa9ce32f3614e79a9ecd99c7ca33f3f87fab",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "BLURRY",
+        "confidence": 0.55,
+        "needs_human_review": true,
+        "review_reason": "SIMULATED_LOW_QUALITY"
+      }
+    },
+    {
+      "id": "EVI-A-11",
+      "category": "APPAREL",
+      "scenario": "SIZE_MISMATCH",
+      "filename": "EVI-A-11.png",
+      "content_type": "image/png",
+      "input_sha256": "4d951ac5a19e5f6e2e52ce81b721da9afb41eb0443a5c1079a6b4cac6b04c3db",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-12",
+      "category": "APPAREL",
+      "scenario": "STAIN",
+      "filename": "EVI-A-12.png",
+      "content_type": "image/png",
+      "input_sha256": "ee2304281cdb104d57a8af86cdf254b43431b53204c678c6a317572065b92e90",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-13",
+      "category": "APPAREL",
+      "scenario": "SEAM_DAMAGE",
+      "filename": "EVI-A-13.png",
+      "content_type": "image/png",
+      "input_sha256": "175365eaa22f1adb8a20bce9310d8132b6dda554b7ba1ee6d608e9ad2a15e186",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-14",
+      "category": "APPAREL",
+      "scenario": "WRONG_ITEM",
+      "filename": "EVI-A-14.png",
+      "content_type": "image/png",
+      "input_sha256": "9a515796d3194ea44338e993be022d9bb09eb45567b9fe880bc739451611d626",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-15",
+      "category": "APPAREL",
+      "scenario": "TAG_CHECK",
+      "filename": "EVI-A-15.png",
+      "content_type": "image/png",
+      "input_sha256": "fdde070192ad4834cddfe13f47d9ae8a59d26cc9e82d24d963e95c3c47704903",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-16",
+      "category": "APPAREL",
+      "scenario": "COLOR_MISMATCH",
+      "filename": "EVI-A-16.png",
+      "content_type": "image/png",
+      "input_sha256": "1106093806e42838a30ca5ed27b61bbda22b9f2800cccda59dd3ec526506d090",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-17",
+      "category": "APPAREL",
+      "scenario": "PACKAGING_DAMAGE",
+      "filename": "EVI-A-17.png",
+      "content_type": "image/png",
+      "input_sha256": "af2f00d82de4b6b9ecac1b78bd5acd8a20b21255c54e30490ac595096816d432",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-18",
+      "category": "APPAREL",
+      "scenario": "RETURN_CONDITION",
+      "filename": "EVI-A-18.png",
+      "content_type": "image/png",
+      "input_sha256": "a04fe761953e2e201d201d48fc88951e10b93cfa99f517d749c6cd12e0d4a5a7",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-19",
+      "category": "APPAREL",
+      "scenario": "LABEL_CHECK",
+      "filename": "EVI-A-19.png",
+      "content_type": "image/png",
+      "input_sha256": "5a1da69013ad73eb771e60b173923f2d726c0af2d581f9f6248cde8e2b81d6c7",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-A-20",
+      "category": "APPAREL",
+      "scenario": "QUALITY_UNCLEAR",
+      "filename": "EVI-A-20.png",
+      "content_type": "image/png",
+      "input_sha256": "a93422c75e50db0c3e868b4b23271e434f7184df2f321f5d8fb0e2c8c01f32a4",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "BLURRY",
+        "confidence": 0.55,
+        "needs_human_review": true,
+        "review_reason": "SIMULATED_LOW_QUALITY"
+      }
+    },
+    {
+      "id": "EVI-H-21",
+      "category": "HOME",
+      "scenario": "MISSING_PART",
+      "filename": "EVI-H-21.png",
+      "content_type": "image/png",
+      "input_sha256": "06f3ceb182b1a6c9071bb841b2160c48be8a7fe1775b4eae644e41877698b338",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": "模拟缺少部件",
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-22",
+      "category": "HOME",
+      "scenario": "DAMAGED_ITEM",
+      "filename": "EVI-H-22.png",
+      "content_type": "image/png",
+      "input_sha256": "f612c3339b5e9cb726c97f1b81f98e13d356521bc3cb0aed56f33d5098ec2163",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-23",
+      "category": "HOME",
+      "scenario": "CRACK",
+      "filename": "EVI-H-23.png",
+      "content_type": "image/png",
+      "input_sha256": "603b845a04ba8a4aabcb5d041e4591e3294c7a140422c38353de98aa4575fc8a",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-24",
+      "category": "HOME",
+      "scenario": "PACKAGING_DAMAGE",
+      "filename": "EVI-H-24.png",
+      "content_type": "image/png",
+      "input_sha256": "7f5cb20a4b191a89ab89f47779e9d7c4fd748630d446b9f630850a8f14afa1cc",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-25",
+      "category": "HOME",
+      "scenario": "ASSEMBLY_CHECK",
+      "filename": "EVI-H-25.png",
+      "content_type": "image/png",
+      "input_sha256": "da18e3251eb8a21a81625572f786b1b162f4d416d0b1ea7a0182973567b23223",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-26",
+      "category": "HOME",
+      "scenario": "WRONG_ITEM",
+      "filename": "EVI-H-26.png",
+      "content_type": "image/png",
+      "input_sha256": "531ae6013494e9e37563ea42ae2ac5c29a23c93d7e089774632ce2694f02ea4e",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-27",
+      "category": "HOME",
+      "scenario": "SURFACE_SCRATCH",
+      "filename": "EVI-H-27.png",
+      "content_type": "image/png",
+      "input_sha256": "0d8430394ab9fae05c996309ed8d242e16825513793963cdb5ae31a818ab4750",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": "可见破损",
+        "damage_location": "模拟右侧区域",
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-28",
+      "category": "HOME",
+      "scenario": "HARDWARE_CHECK",
+      "filename": "EVI-H-28.png",
+      "content_type": "image/png",
+      "input_sha256": "2168e8a182d5b14f7dc9730b15e671d738d9fe1adc721585ad7403e0e833adfb",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": "模拟缺少部件",
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-29",
+      "category": "HOME",
+      "scenario": "LABEL_CHECK",
+      "filename": "EVI-H-29.png",
+      "content_type": "image/png",
+      "input_sha256": "266a5c1b9e31ad035003b00ae3d5ae83da1ec07134eca7665c614c00ed843970",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "CLEAR",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "review_reason": null
+      }
+    },
+    {
+      "id": "EVI-H-30",
+      "category": "HOME",
+      "scenario": "QUALITY_UNCLEAR",
+      "filename": "EVI-H-30.png",
+      "content_type": "image/png",
+      "input_sha256": "b46397baa17f8e20b8dbad1c39b1f0cc808c9b2642644f1cdb597ed5d03a7feb",
+      "expected_analysis": {
+        "evidence_type": "PRODUCT_AND_PACKAGING",
+        "damage_type": null,
+        "damage_location": null,
+        "packaging_status": "模拟包装可见",
+        "missing_parts": null,
+        "label_match": "SIMULATED_MATCH",
+        "image_quality": "BLURRY",
+        "confidence": 0.55,
+        "needs_human_review": true,
+        "review_reason": "SIMULATED_LOW_QUALITY"
+      }
+    }
+  ]
+}

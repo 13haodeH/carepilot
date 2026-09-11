@@ -1,0 +1,19 @@
+{
+  "corpus_set": "self-authored-policy-corpus-v0.1",
+  "data_classification": "SELF_AUTHORED_SYNTHETIC_NO_PII",
+  "source_note": "本语料为 CarePilot 离线检索技术验证自构造，不代表任何商家、平台或法律政策。",
+  "policies": [
+    {"id":"POL-D-LOG","category":"DIGITAL","title":"数码物流停滞说明","keywords":["物流停滞","72小时","承运商查询","预计反馈"],"text":"数码订单物流停滞超过72小时，可创建承运商查询任务，并向用户发送预计反馈时间；不得改变支付、库存或权益。"},
+    {"id":"POL-D-MISS","category":"DIGITAL","title":"数码配件缺失材料要求","keywords":["配件缺失","右耳","充电盒","包装照片"],"text":"数码商品配件缺失时，收集订单、包装照片和缺失部件信息；换货方案只能提交人工审批。"},
+    {"id":"POL-D-DAMAGE","category":"DIGITAL","title":"数码外观损坏材料要求","keywords":["外观损坏","屏幕破损","受损图片","包装损坏"],"text":"数码商品外观损坏时，先收集受损图片、包装损坏信息和签收时间；不得由 Agent 自动换货或退款。"},
+    {"id":"POL-D-WINDOW","category":"DIGITAL","title":"数码售后时限核验","keywords":["签收7日","售后时限","超出时限","订单签收"],"text":"数码售后申请需核验订单签收时间与7日售后时限；时限或材料不完整时先补充信息。"},
+    {"id":"POL-A-SIZE","category":"APPAREL","title":"服饰尺码不符材料要求","keywords":["尺码不符","尺码","吊牌","尺码标","试穿"],"text":"服饰尺码不符时，收集吊牌、尺码标和试穿情况；材料不完整时请求补充，不自动处理退换。"},
+    {"id":"POL-A-RETURN","category":"APPAREL","title":"服饰退货状态核验","keywords":["服饰退货","保持吊牌","退回","签收7日"],"text":"服饰退货需核验签收7日、吊牌保持状态和退回条件；满足条件后仍由人工确认权益变更。"},
+    {"id":"POL-A-WRONG","category":"APPAREL","title":"服饰错发商品核验","keywords":["错发商品","收到不同","货号","实物不符"],"text":"服饰订单收到不同商品时，收集货号、实物不符照片和订单信息，再由人工判断后续方案。"},
+    {"id":"POL-A-CONDITION","category":"APPAREL","title":"服饰退货品相要求","keywords":["污渍","穿着","二次销售","退货状态"],"text":"服饰退货须记录污渍、穿着痕迹和是否影响二次销售；模糊图片需要补拍或人工复核。"},
+    {"id":"POL-H-LOG","category":"HOME","title":"家居物流停滞说明","keywords":["家居物流","72小时","承运商查询","送货进度"],"text":"家居订单送货进度72小时无更新时，可创建承运商查询并发送预计反馈；不得自动补偿。"},
+    {"id":"POL-H-DAMAGE","category":"HOME","title":"家居破损材料要求","keywords":["家具破损","裂纹","破损图片","安装前","包装外箱"],"text":"家居商品出现家具破损或裂纹时，收集安装前图片、包装外箱照片和订单信息，人工审核处理方案。"},
+    {"id":"POL-H-MISS","category":"HOME","title":"家居五金缺件材料要求","keywords":["五金缺件","螺丝","配件清单","组装"],"text":"家居商品五金缺件时，核验配件清单、螺丝缺失和组装进度；缺件补发或换货需人工审批。"},
+    {"id":"POL-H-RETURN","category":"HOME","title":"家居退货状态核验","keywords":["家居退货","未安装","原包装","签收7日"],"text":"家居退货需核验签收7日、未安装状态和原包装完整性；权益变化不得自动执行。"}
+  ]
+}

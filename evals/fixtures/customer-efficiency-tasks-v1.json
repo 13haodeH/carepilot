@@ -1,0 +1,335 @@
+{
+  "fixture_set": "customer-efficiency-tasks-v1",
+  "data_classification": "SELF_AUTHORED_SYNTHETIC_NO_PII",
+  "source_note": "用于 CarePilot 客服提效 v1 实验的订单、物流、政策和凭证情境均为自构造模拟数据，不含真实客户、订单、图片或业务结果。Manual 与 Decision Package 使用同一组底层事实。",
+  "field_labels": {
+    "case_summary": "用户诉求已结构化",
+    "order": "订单归属、商品与订单状态",
+    "logistics": "物流或签收信息",
+    "policy": "已发布政策依据",
+    "evidence": "凭证状态及缺失说明",
+    "proposal_risk": "处置建议、风险与下一步"
+  },
+  "pairs": [
+    {
+      "pair_id": "EFF-01",
+      "category": "DIGITAL",
+      "scenario": "LOGISTICS_DELAY",
+      "risk": "LOW",
+      "target_outcome": "RESOLVED",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": true,
+      "prompt": "用户反馈耳机订单已三天没有新的物流更新，希望确认下一步处理方式。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-01-request", "field": "case_summary", "label": "用户诉求", "content": "用户反馈物流三天未更新，要求确认是否仍会配送。"},
+        {"id": "EFF-01-order", "field": "order", "label": "订单查询", "content": "OD-EFF-01：降噪耳机，已付款，收货地址与当前用户匹配。"},
+        {"id": "EFF-01-logistics", "field": "logistics", "label": "物流查询", "content": "48 小时前到达中转站，后续无扫描；承运商状态为运输延迟。"},
+        {"id": "EFF-01-policy", "field": "policy", "label": "政策查询", "content": "物流异常指引：超过 48 小时无更新，可创建跟进并向用户说明处理时限。"}
+      ],
+      "decision_package": {
+        "summary": "已核验订单归属；当前为运输延迟，未触发资金或履约权益变更。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "物流异常指引 · 超过 48 小时无更新，可创建跟进并通知用户。",
+        "recommendation": "创建物流跟进任务并发送延迟说明，工单可安全推进为已处理。",
+        "system_actions": ["已核验订单归属", "已读取物流节点", "已匹配物流异常政策"],
+        "reviewer_action": "确认低风险处理结果；无需人工权益审批。"
+      }
+    },
+    {
+      "pair_id": "EFF-02",
+      "category": "HOME",
+      "scenario": "LOGISTICS_STATUS_LAG",
+      "risk": "LOW",
+      "target_outcome": "RESOLVED",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": true,
+      "prompt": "用户已签收一盏台灯，但页面仍显示运输中，询问是否需要再次下单。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-02-request", "field": "case_summary", "label": "用户诉求", "content": "用户已收到商品，但订单状态未更新，担心订单异常。"},
+        {"id": "EFF-02-order", "field": "order", "label": "订单查询", "content": "OD-EFF-02：阅读台灯，订单状态运输中，收件人归属匹配。"},
+        {"id": "EFF-02-logistics", "field": "logistics", "label": "物流查询", "content": "承运商已签收，签收时间为今日 10:24；电商状态同步延迟。"},
+        {"id": "EFF-02-policy", "field": "policy", "label": "政策查询", "content": "配送状态同步说明：签收凭证存在时，客服可说明系统延迟并创建状态同步任务。"}
+      ],
+      "decision_package": {
+        "summary": "签收事实已确认，问题属于页面状态同步延迟。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "配送状态同步说明 · 可创建同步任务并向用户解释。",
+        "recommendation": "创建状态同步任务并通知用户，无需重新下单或人工权益审核。",
+        "system_actions": ["已核验签收状态", "已排除重复下单需求", "已匹配状态同步说明"],
+        "reviewer_action": "确认低风险解释与状态同步跟进。"
+      }
+    },
+    {
+      "pair_id": "EFF-03",
+      "category": "APPAREL",
+      "scenario": "DELIVERY_DELAY_EXPLANATION",
+      "risk": "LOW",
+      "target_outcome": "RESOLVED",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": true,
+      "prompt": "用户反馈外套预计送达日已过，但物流显示正在派送，要求给出处理说明。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-03-request", "field": "case_summary", "label": "用户诉求", "content": "用户关心超过预计送达日后是否还能正常派送。"},
+        {"id": "EFF-03-order", "field": "order", "label": "订单查询", "content": "OD-EFF-03：风衣，已付款，订单未取消。"},
+        {"id": "EFF-03-logistics", "field": "logistics", "label": "物流查询", "content": "当前为派送中，最新扫描时间为今日 08:40，无丢失或退回信号。"},
+        {"id": "EFF-03-policy", "field": "policy", "label": "政策查询", "content": "派送延迟说明：仍在派送时可给出预计时段说明并创建关注任务。"}
+      ],
+      "decision_package": {
+        "summary": "包裹仍在末端派送，现有信息支持发送解释和关注通知。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "派送延迟说明 · 仍在派送时可解释并创建关注任务。",
+        "recommendation": "发送预计派送说明并创建关注任务，安全推进工单。",
+        "system_actions": ["已核验订单有效", "已读取末端派送状态", "已生成用户说明"],
+        "reviewer_action": "确认低风险处理结果。"
+      }
+    },
+    {
+      "pair_id": "EFF-04",
+      "category": "DIGITAL",
+      "scenario": "LOGISTICS_FOLLOW_UP",
+      "risk": "LOW",
+      "target_outcome": "RESOLVED",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": true,
+      "prompt": "用户询问手机壳在分拨中心停留两天后是否已经丢件。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-04-request", "field": "case_summary", "label": "用户诉求", "content": "用户怀疑包裹丢失，要求确认是否立即补发。"},
+        {"id": "EFF-04-order", "field": "order", "label": "订单查询", "content": "OD-EFF-04：手机壳，订单归属匹配，尚未完成签收。"},
+        {"id": "EFF-04-logistics", "field": "logistics", "label": "物流查询", "content": "分拨中心停留 49 小时，承运商未标记丢失或退回。"},
+        {"id": "EFF-04-policy", "field": "policy", "label": "政策查询", "content": "物流异常指引：无丢失状态时先创建承运商跟进，不直接承诺补发。"}
+      ],
+      "decision_package": {
+        "summary": "当前只有延迟信号，没有丢件结论；补发不应自动承诺。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "物流异常指引 · 无丢失状态时先跟进，不直接承诺补发。",
+        "recommendation": "创建承运商跟进并通知用户，工单以低风险解释处理。",
+        "system_actions": ["已排除丢失状态", "已匹配跟进政策", "已准备延迟通知"],
+        "reviewer_action": "确认低风险跟进；不把补发作为自动动作。"
+      }
+    },
+    {
+      "pair_id": "EFF-05",
+      "category": "HOME",
+      "scenario": "BLURRY_DAMAGE_EVIDENCE",
+      "risk": "MEDIUM",
+      "target_outcome": "NEED_INFO",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户称香薰机外壳破损，但仅上传一张模糊的远景图片。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-05-request", "field": "case_summary", "label": "用户诉求", "content": "用户主张商品到货即破损，希望直接换新。"},
+        {"id": "EFF-05-order", "field": "order", "label": "订单查询", "content": "OD-EFF-05：香薰机，昨日签收，订单归属匹配。"},
+        {"id": "EFF-05-logistics", "field": "logistics", "label": "物流查询", "content": "物流显示正常签收，无异常节点。"},
+        {"id": "EFF-05-policy", "field": "policy", "label": "政策查询", "content": "破损售后指引：需提供商品整体、破损局部和外包装的清晰凭证。"},
+        {"id": "EFF-05-evidence", "field": "evidence", "label": "凭证查看", "content": "现有图片模糊，无法识别破损位置，也未展示外包装。"}
+      ],
+      "decision_package": {
+        "summary": "订单与时限满足核验条件，但现有图片不足以支持权益方案。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "MISSING", "proposal_risk": "READY"},
+        "missing_information": ["商品破损局部清晰图", "外包装与物流面单状态图"],
+        "policy_citation": "破损售后指引 · 需商品整体、破损局部和外包装的清晰凭证。",
+        "recommendation": "请求补充两类图片；当前不生成换新 Proposal。",
+        "system_actions": ["已核验订单与签收时限", "已识别图片质量不足", "已整理补件清单"],
+        "reviewer_action": "确认请求补充材料。"
+      }
+    },
+    {
+      "pair_id": "EFF-06",
+      "category": "DIGITAL",
+      "scenario": "MISSING_PART_EVIDENCE_GAP",
+      "risk": "MEDIUM",
+      "target_outcome": "NEED_INFO",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户表示新耳机缺少充电线，上传的图片只拍到了外包装正面。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-06-request", "field": "case_summary", "label": "用户诉求", "content": "用户称包装内缺少充电线，希望立即补发。"},
+        {"id": "EFF-06-order", "field": "order", "label": "订单查询", "content": "OD-EFF-06：无线耳机套装，签收 2 天，订单归属匹配。"},
+        {"id": "EFF-06-logistics", "field": "logistics", "label": "物流查询", "content": "物流已签收，无破损异常节点。"},
+        {"id": "EFF-06-policy", "field": "policy", "label": "政策查询", "content": "配件缺失指引：需展示包装清单、内盒与全部已收到配件。"},
+        {"id": "EFF-06-evidence", "field": "evidence", "label": "凭证查看", "content": "仅有外包装正面，无法核对内盒或配件清单。"}
+      ],
+      "decision_package": {
+        "summary": "售后时限正常，但缺少判断配件缺失所需的包装内部证据。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "MISSING", "proposal_risk": "READY"},
+        "missing_information": ["内盒全景图", "包装清单和已收到配件图"],
+        "policy_citation": "配件缺失指引 · 需展示包装清单、内盒与全部已收到配件。",
+        "recommendation": "请求补充内盒与配件凭证，暂不创建补发 Proposal。",
+        "system_actions": ["已核验订单和时限", "已定位证据缺口", "已生成补件说明"],
+        "reviewer_action": "确认请求补充材料。"
+      }
+    },
+    {
+      "pair_id": "EFF-07",
+      "category": "APPAREL",
+      "scenario": "ORDER_EVIDENCE_MISMATCH",
+      "risk": "MEDIUM",
+      "target_outcome": "NEED_INFO",
+      "requires_human_review": false,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户称衬衫存在污渍，但图片展示的是另一件印花卫衣。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-07-request", "field": "case_summary", "label": "用户诉求", "content": "用户主张签收商品有污渍，要求退换。"},
+        {"id": "EFF-07-order", "field": "order", "label": "订单查询", "content": "OD-EFF-07：白色衬衫，签收当日，订单归属匹配。"},
+        {"id": "EFF-07-logistics", "field": "logistics", "label": "物流查询", "content": "物流正常签收。"},
+        {"id": "EFF-07-policy", "field": "policy", "label": "政策查询", "content": "质量问题指引：凭证需与订单商品一致，无法对应时应补充材料。"},
+        {"id": "EFF-07-evidence", "field": "evidence", "label": "凭证查看", "content": "图片中的印花卫衣与订单白色衬衫不一致。"}
+      ],
+      "decision_package": {
+        "summary": "图片与订单商品不匹配；这不是自动拒绝，而是需要补充可关联凭证。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "MISSING", "proposal_risk": "READY"},
+        "missing_information": ["与订单白色衬衫一致的商品和污渍局部图片"],
+        "policy_citation": "质量问题指引 · 凭证无法对应订单商品时应补充材料。",
+        "recommendation": "请求重新上传可关联凭证，不进入退换 Proposal。",
+        "system_actions": ["已核验订单商品", "已识别订单—图片不匹配", "已生成针对性补件说明"],
+        "reviewer_action": "确认请求补充材料。"
+      }
+    },
+    {
+      "pair_id": "EFF-08",
+      "category": "DIGITAL",
+      "scenario": "DAMAGED_HEADPHONES",
+      "risk": "HIGH",
+      "target_outcome": "WAITING_REVIEW",
+      "requires_human_review": true,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户上传了断裂头戴耳机、外包装和订单匹配的清晰凭证，希望换货。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-08-request", "field": "case_summary", "label": "用户诉求", "content": "用户要求更换签收当天发现断裂的头戴耳机。"},
+        {"id": "EFF-08-order", "field": "order", "label": "订单查询", "content": "OD-EFF-08：头戴耳机，签收当天，订单归属和商品一致。"},
+        {"id": "EFF-08-logistics", "field": "logistics", "label": "物流查询", "content": "物流已签收，外包装存在挤压备注。"},
+        {"id": "EFF-08-policy", "field": "policy", "label": "政策查询", "content": "数码破损指引：签收时限内、凭证完整时可提交换货人工审核。"},
+        {"id": "EFF-08-evidence", "field": "evidence", "label": "凭证查看", "content": "图片清晰展示耳机头梁断裂、外包装挤压和订单商品标签。"}
+      ],
+      "decision_package": {
+        "summary": "订单、签收时限、包装异常和破损凭证均已核验，满足发起换货 Proposal 的信息条件。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "数码破损指引 · 凭证完整时可提交换货人工审核。",
+        "recommendation": "创建 replace.propose，风险为 HIGH，进入人工审核。",
+        "system_actions": ["已核验订单、签收时限与物流备注", "已整理破损凭证", "未执行任何换货动作"],
+        "reviewer_action": "打开人工审核 Proposal，选择采纳、修改、不采用或接手。"
+      }
+    },
+    {
+      "pair_id": "EFF-09",
+      "category": "DIGITAL",
+      "scenario": "MISSING_CHARGER",
+      "risk": "HIGH",
+      "target_outcome": "WAITING_REVIEW",
+      "requires_human_review": true,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户提供了平板包装清单、内盒和全部配件照片，显示充电器缺失，希望补件。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-09-request", "field": "case_summary", "label": "用户诉求", "content": "用户称平板套装缺少原装充电器，希望补发。"},
+        {"id": "EFF-09-order", "field": "order", "label": "订单查询", "content": "OD-EFF-09：平板套装，签收 1 天，订单归属匹配。"},
+        {"id": "EFF-09-logistics", "field": "logistics", "label": "物流查询", "content": "物流正常签收，无退回或重复签收记录。"},
+        {"id": "EFF-09-policy", "field": "policy", "label": "政策查询", "content": "配件缺失指引：凭证完整且在时限内时，可提交补件人工审核。"},
+        {"id": "EFF-09-evidence", "field": "evidence", "label": "凭证查看", "content": "清单列有充电器；内盒、全部已收到配件和商品标签均清晰可见。"}
+      ],
+      "decision_package": {
+        "summary": "包装清单与凭证一致地显示充电器缺失，满足补件 Proposal 的信息条件。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "配件缺失指引 · 凭证完整且在时限内时，可提交补件人工审核。",
+        "recommendation": "创建补件/换货类 Proposal，进入人工审核，不自动履约。",
+        "system_actions": ["已核验订单和签收时限", "已核对包装清单与凭证", "未执行补件或库存变更"],
+        "reviewer_action": "打开人工审核 Proposal 后作出最终决定。"
+      }
+    },
+    {
+      "pair_id": "EFF-10",
+      "category": "APPAREL",
+      "scenario": "RETURN_WINDOW_BORDER",
+      "risk": "HIGH",
+      "target_outcome": "WAITING_REVIEW",
+      "requires_human_review": true,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户在签收第七天提出退货，商品吊牌、外包装和订单信息均已上传。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-10-request", "field": "case_summary", "label": "用户诉求", "content": "用户希望在时限边界退回尺码不合适的外套。"},
+        {"id": "EFF-10-order", "field": "order", "label": "订单查询", "content": "OD-EFF-10：外套，签收第七天，订单归属匹配。"},
+        {"id": "EFF-10-logistics", "field": "logistics", "label": "物流查询", "content": "签收时间可追溯，未出现重复售后。"},
+        {"id": "EFF-10-policy", "field": "policy", "label": "政策查询", "content": "服饰退货指引：时限边界和商品状态需人工确认后才能生成退货权益。"},
+        {"id": "EFF-10-evidence", "field": "evidence", "label": "凭证查看", "content": "吊牌、未穿着状态和外包装照片清晰，未见明显缺失。"}
+      ],
+      "decision_package": {
+        "summary": "时限处于边界，商品状态凭证完整；可进入人工退货审核，不能自动通过。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "服饰退货指引 · 时限边界和商品状态需人工确认。",
+        "recommendation": "创建 return.propose，进入人工审核。",
+        "system_actions": ["已核验签收时点", "已整理商品状态凭证", "未自动批准退货"],
+        "reviewer_action": "打开人工审核 Proposal 后确认、修改、不采用或接手。"
+      }
+    },
+    {
+      "pair_id": "EFF-11",
+      "category": "HOME",
+      "scenario": "DAMAGED_SPEAKER",
+      "risk": "HIGH",
+      "target_outcome": "WAITING_REVIEW",
+      "requires_human_review": true,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户上传蓝牙音箱外壳裂纹、包装破损和商品标签图片，希望更换商品。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-11-request", "field": "case_summary", "label": "用户诉求", "content": "用户称音箱到货即有裂纹，要求换货。"},
+        {"id": "EFF-11-order", "field": "order", "label": "订单查询", "content": "OD-EFF-11：蓝牙音箱，签收当日，商品与用户归属匹配。"},
+        {"id": "EFF-11-logistics", "field": "logistics", "label": "物流查询", "content": "承运商记录存在包装受压扫描。"},
+        {"id": "EFF-11-policy", "field": "policy", "label": "政策查询", "content": "破损换货指引：商品、包装和订单可关联时，提交人工换货审核。"},
+        {"id": "EFF-11-evidence", "field": "evidence", "label": "凭证查看", "content": "裂纹位置、包装破损和商品标签均清晰，且与订单音箱一致。"}
+      ],
+      "decision_package": {
+        "summary": "商品、包装、物流异常与订单已关联，具备换货 Proposal 的完整证据。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "破损换货指引 · 商品、包装和订单可关联时提交人工审核。",
+        "recommendation": "创建 replace.propose，进入人工审核。",
+        "system_actions": ["已关联订单、物流与凭证", "已生成高风险处置建议", "未执行换货"],
+        "reviewer_action": "打开人工审核 Proposal 后作出最终决定。"
+      }
+    },
+    {
+      "pair_id": "EFF-12",
+      "category": "APPAREL",
+      "scenario": "REPEATED_RETURN_CONFLICT",
+      "risk": "HIGH",
+      "target_outcome": "WAITING_REVIEW",
+      "requires_human_review": true,
+      "eligible_for_safe_automation": false,
+      "prompt": "用户再次申请退回同一件连衣裙；订单历史显示此前已有一次撤销的退货申请。",
+      "required_information_fields": ["case_summary", "order", "logistics", "policy", "evidence", "proposal_risk"],
+      "manual_sources": [
+        {"id": "EFF-12-request", "field": "case_summary", "label": "用户诉求", "content": "用户再次申请退货，表示此前因物流原因未寄出。"},
+        {"id": "EFF-12-order", "field": "order", "label": "订单与历史查询", "content": "OD-EFF-12：连衣裙，存在一次已撤销的退货申请，当前订单未完成退款。"},
+        {"id": "EFF-12-logistics", "field": "logistics", "label": "物流查询", "content": "当前订单已签收，未发生逆向物流。"},
+        {"id": "EFF-12-policy", "field": "policy", "label": "政策查询", "content": "重复售后指引：存在历史申请时须人工核验原因和当前时限，不自动通过。"},
+        {"id": "EFF-12-evidence", "field": "evidence", "label": "商品状态查看", "content": "用户提供未穿着和吊牌照片，但历史撤销原因需要人工判断。"}
+      ],
+      "decision_package": {
+        "summary": "商品状态凭证存在，但重复售后历史与时限边界需要人工综合判断。",
+        "field_status": {"case_summary": "READY", "order": "READY", "logistics": "READY", "policy": "READY", "evidence": "READY", "proposal_risk": "READY"},
+        "missing_information": [],
+        "policy_citation": "重复售后指引 · 存在历史申请时须人工核验原因和当前时限。",
+        "recommendation": "创建 return.propose 并标记历史冲突，进入人工审核。",
+        "system_actions": ["已汇总订单与历史申请", "已关联当前商品状态", "未自动批准退货"],
+        "reviewer_action": "打开人工审核 Proposal，核验历史撤销原因后作出最终决定。"
+      }
+    }
+  ]
+}

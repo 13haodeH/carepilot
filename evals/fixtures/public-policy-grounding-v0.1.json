@@ -1,0 +1,88 @@
+{
+  "pack_id": "public-policy-grounding-v0.1",
+  "grounding_verified_at": "2026-09-09T00:00:00Z",
+  "scope_note": "Only policy references in this pack are grounded in public sources. Orders, logistics, refunds, payments, inventory, customers, and experiment tasks remain simulated.",
+  "sources": [
+    {
+      "id": "PS-SAMR-7DAY",
+      "title": "网络购买商品七日无理由退货暂行办法",
+      "publisher": "国家市场监督管理总局",
+      "source_type": "PUBLIC_REGULATION",
+      "source_scope": "PUBLIC_POLICY_REFERENCE",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+      "source_version_label": "国家市场监督管理总局令第31号（2020年修订）",
+      "source_published_at": "2020-11-03T00:00:00Z",
+      "source_excerpt": "消费者为生活消费需要通过网络购买商品，自收到商品之日起七日内退货，适用本办法；网络商品销售者依法履行义务，平台提供者应引导、督促并提供技术保障。部分定作、鲜活易腐、已拆封数字化商品等不适用或可在购买确认后不适用。",
+      "chunks": [
+        {
+          "chunk_key": "samr-seven-day-scope",
+          "category": "ALL",
+          "title": "七日无理由退货的适用范围",
+          "content": "面向生活消费的网络购物，在收到商品后七日内可按法定规则申请退货；这是规则参考，不直接决定模拟工单的退款、退货或补偿。",
+          "keywords": ["七天", "七日", "无理由", "退货", "收到商品"]
+        },
+        {
+          "chunk_key": "samr-seven-day-exclusions",
+          "category": "ALL",
+          "title": "不适用或需确认的商品范围",
+          "content": "定作、鲜活易腐、已拆封的数字化商品等存在法定不适用情形；影响人身安全或价值显著贬损的商品，需要在购买时由消费者确认后才可能不适用。",
+          "keywords": ["定作", "易腐", "数字化", "拆封", "激活", "不适用"]
+        }
+      ]
+    },
+    {
+      "id": "PS-JD-SELF-GENERAL",
+      "title": "京东自营商品售后政策服务总则",
+      "publisher": "京东帮助中心",
+      "source_type": "PUBLIC_PLATFORM_POLICY",
+      "source_scope": "PUBLIC_POLICY_REFERENCE",
+      "source_url": "https://help.jd.com/user/issue/327-988.html",
+      "source_version_label": "公开帮助页快照 v2026.09.09（页面未标示独立版本号）",
+      "source_published_at": null,
+      "source_excerpt": "该公开帮助页说明：自签收商品次日七日内可退货、十五日内可换货；质量问题、物流损、缺件或描述不符等情形的具体处理须经核查，审核中可能要求快递证明或实物照片。个人原因场景还受商品完好、附件齐全及商品详情页特殊规则约束。",
+      "chunks": [
+        {
+          "chunk_key": "jd-general-quality-and-logistics",
+          "category": "ALL",
+          "title": "质量、物流损和缺件的公开处理条件",
+          "content": "质量问题、运输造成的损坏、缺件或描述不符，需经售后核查；为加快判断，公开政策说明可能需要检测报告、快递证明或实物照片。系统只能建议补充证据或转人工，不能自动退款、补发或换货。",
+          "keywords": ["质量", "物流损", "缺件", "照片", "证明", "检测报告"]
+        },
+        {
+          "chunk_key": "jd-general-personal-return",
+          "category": "ALL",
+          "title": "个人原因退换货的公开条件",
+          "content": "个人原因的退换货参考七日时限、商品及附件完好等公开条件，同时应查看商品详情页的特殊规则；系统不得据此自动承诺退款或退货。",
+          "keywords": ["个人原因", "不喜欢", "不合适", "附件", "完好", "七天"]
+        }
+      ]
+    },
+    {
+      "id": "PS-JD-DIGITAL-SELF",
+      "title": "手机、数码类商品售后服务细则（自营）",
+      "publisher": "京东帮助中心",
+      "source_type": "PUBLIC_PLATFORM_POLICY",
+      "source_scope": "PUBLIC_POLICY_REFERENCE",
+      "source_url": "https://help.jd.com/user/issue/325-915.html",
+      "source_version_label": "公开帮助页快照 v2026.09.09（页面未标示独立版本号）",
+      "source_published_at": null,
+      "source_excerpt": "该公开帮助页说明手机、数码、IT 类商品通常自实际收到商品第二日起七日内可退货、十五日内可换货；无理由退货要求商品及附件完好，并受特殊规则约束。含授权或激活信息的游戏、软件等特殊商品，无质量问题时不予退换货。",
+      "chunks": [
+        {
+          "chunk_key": "jd-digital-time-and-condition",
+          "category": "DIGITAL",
+          "title": "数码商品的时限与完好条件",
+          "content": "公开细则将手机、数码、IT 类商品的无理由退货与收到商品后的七日时限、商品及附件完好相联系；实际资格仍须人工核验订单、商品状态和适用规则。",
+          "keywords": ["数码", "手机", "七天", "十五天", "附件", "完好"]
+        },
+        {
+          "chunk_key": "jd-digital-activation",
+          "category": "DIGITAL",
+          "title": "激活或授权信息的特殊限制",
+          "content": "含授权或激活信息的游戏、软件等特殊商品，若无质量问题，公开细则不支持退换货；遇到激活状态不明时应先请求证据或转人工审核。",
+          "keywords": ["激活", "授权", "软件", "游戏", "序列号", "特殊商品"]
+        }
+      ]
+    }
+  ]
+}
