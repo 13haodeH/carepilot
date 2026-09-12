@@ -1,5 +1,7 @@
 # CarePilot（售后智策）项目计划书
 
+> 文档状态：这是项目早期的范围与六周规划，保留用于回溯原始取舍。它列出的 Redis、RQ、Multi-Agent、Reranker、语音等不等于 MVP1 已实现能力；当前冻结产品范围与可公开结论以 [`docs/mvp-v1/README.md`](docs/mvp-v1/README.md) 和 [`docs/product/PRD-MVP1.md`](docs/product/PRD-MVP1.md) 为准，后续变更从 [`docs/mvp-v2/`](docs/mvp-v2/README.md) 开始。
+
 ## 一、项目目标与产品范围
 
 ### 1. 项目名称

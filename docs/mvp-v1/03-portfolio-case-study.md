@@ -27,6 +27,14 @@
 | 人工客服 | 对高风险 Proposal 进行最终确认、修改、拒绝或接手 |
 | 审计与评测 | 保存模型、Prompt、政策、Tool、证据、状态、时延、成本与失败原因 |
 
+## AI 迭代：不把所有问题都归因于 Prompt
+
+MVP1 实际运行过的 Resolution Prompt 是 `resolution-v1`，视觉 Prompt 是 `vision-evidence-v1`。仓库没有三组独立、冻结、可比较的 Prompt 实验，因此案例页不虚构“Prompt V1 → V3 带来指标提升”。
+
+真实迭代围绕坏例选择最小修复层：`RAE-008` 的 Tool 轮次失败通过上限与重复调用约束恢复；政策 citation 缺失通过检索词归一化和订单品类约束修复；图片评测混淆则通过分离模型原始复核与确定性 Evidence 门禁处理。`HRA-P-002` 的单图证据不足仍保留人工复核，不用改 Prompt 强行通过。每次修复均新建评测版本并保留旧运行。
+
+完整版本、已知追溯缺口和坏例见 [Prompt 版本台账](../ai/PROMPT-REGISTER.md) 与 [坏例台账](../ai/BADCASE-REGISTER.md)。
+
 ## 结果与证据
 
 ### 真实运行证据

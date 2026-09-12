@@ -46,6 +46,7 @@ MVP1 是已冻结的**个人作品集与技术 Demo**，不是生产售后系统
 ## 体验与阅读入口
 
 - [公开实验台](https://carepilot-efficiency-experiment.netlify.app/)：匿名体验模拟客服处理流程。
+- [文档总索引](docs/README.md)：按产品、AI 版本、坏例、变更、实验和部署查找材料。
 - [MVP1 总览与冻结边界](docs/mvp-v1/README.md)
 - [真人实验结果报告](docs/mvp-v1/01-human-study-report-2026-09-12.md)
 - [3–5 分钟 Demo 脚本](docs/mvp-v1/02-demo-script.md)
