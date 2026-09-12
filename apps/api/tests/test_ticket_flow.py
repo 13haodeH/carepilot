@@ -630,8 +630,15 @@ class TicketFlowTest(unittest.TestCase):
                 "source_actions": [task["sources"][0]["id"]],
                 "high_risk_gate_observed": pair["requires_human_review"],
                 "proposal_outcome": "ADOPTED" if pair["requires_human_review"] and task["condition"] == "DECISION_PACKAGE" else None,
+                "active_duration_seconds": 0,
                 "ease_rating_1_to_7": 5,
             }
+            if task["round"] == 1:
+                invalid_duration = self.client.post(f'/api/public-efficiency/tasks/{task["task_id"]}/records', json={
+                    **payload,
+                    "active_duration_seconds": 999_999,
+                })
+                self.assertEqual(invalid_duration.status_code, 422)
             submitted = self.client.post(f'/api/public-efficiency/tasks/{task["task_id"]}/records', json=payload)
             self.assertEqual(submitted.status_code, 200)
 

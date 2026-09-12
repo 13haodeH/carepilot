@@ -348,6 +348,7 @@ class PublicEfficiencyRecordRequest(BaseModel):
     source_actions: list[str] = Field(default_factory=list, max_length=8)
     high_risk_gate_observed: bool = False
     proposal_outcome: PublicProposalOutcome | None = None
+    active_duration_seconds: int | None = Field(default=None, ge=0)
     ease_rating_1_to_7: int = Field(ge=1, le=7)
     observer_notes: str = Field(default="", max_length=500)
 
