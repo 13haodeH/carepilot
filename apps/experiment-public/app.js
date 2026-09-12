@@ -23,11 +23,7 @@
     return payload;
   };
   const currentTask = () => state.session.tasks.find((task) => !state.session.completed_task_ids.includes(task.task_id));
-  const activeElapsedMs = () => {
-    if (!state.active) return 0;
-    return state.active.activeElapsedMs + (state.active.activeSinceMs ? Math.max(0, Date.now() - state.active.activeSinceMs) : 0);
-  };
-  const elapsed = () => Math.floor(activeElapsedMs() / 1000);
+  const elapsed = () => state.active ? Math.max(0, Math.floor((Date.now() - new Date(state.active.startedAt).getTime()) / 1000)) : 0;
   const timerText = () => { const seconds = elapsed(); return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; };
   const notice = () => state.error ? `<p class="notice error">${escape(state.error)}</p>` : state.notice ? `<p class="notice">${escape(state.notice)}</p>` : '';
 
@@ -58,7 +54,7 @@
     const task = currentTask(); state.error = ''; state.notice = '';
     try {
       const started = await request(`/api/public-efficiency/tasks/${task.task_id}/start`, { participant_id: state.session.participant_id });
-      state.active = { task, activeElapsedMs: 0, activeSinceMs: document.visibilityState === 'visible' ? Date.now() : null, sourceActions: [], selectedOutcome: null, humanConfirmationOpened: false, suggestionChoice: null, easeRating: null, notes: '' }; renderTask();
+      state.active = { task, startedAt: started.started_at, sourceActions: [], selectedOutcome: null, humanConfirmationOpened: false, suggestionChoice: null, easeRating: null, notes: '' }; renderTask();
     } catch (error) { state.error = error.message; renderIntro(); }
   }
 
@@ -69,20 +65,13 @@
     if (active.task.requires_human_confirmation && active.task.condition === 'DECISION_PACKAGE' && !active.suggestionChoice) { state.error = '请告诉我们：你会怎样处理系统给出的建议。'; renderTask(); return; }
     state.saving = true; state.error = ''; renderTask();
     try {
-      const saved = await request(`/api/public-efficiency/tasks/${active.task.task_id}/records`, { participant_id: state.session.participant_id, selected_outcome: active.selectedOutcome, source_actions: active.sourceActions, high_risk_gate_observed: active.humanConfirmationOpened, proposal_outcome: active.suggestionChoice, active_duration_seconds: Math.round(activeElapsedMs() / 1000), ease_rating_1_to_7: active.easeRating, observer_notes: active.notes });
+      const saved = await request(`/api/public-efficiency/tasks/${active.task.task_id}/records`, { participant_id: state.session.participant_id, selected_outcome: active.selectedOutcome, source_actions: active.sourceActions, high_risk_gate_observed: active.humanConfirmationOpened, proposal_outcome: active.suggestionChoice, ease_rating_1_to_7: active.easeRating, observer_notes: active.notes });
       state.session.completed_task_ids = saved.completed_task_ids; state.active = null; state.notice = saved.experiment_completed ? '' : '这一题已经保存。准备好后再开始下一题。'; state.saving = false;
       if (saved.experiment_completed) renderThanks(); else renderIntro();
     } catch (error) { state.error = error.message; state.saving = false; renderTask(); }
   }
 
   function renderThanks() { app.innerHTML = `<section class="shell"><div class="card thanks"><p class="success">✓</p><h1>感谢你的参与！</h1><p class="muted">你已完成全部题目。你的回答已保存，无需再操作。</p></div></section>`; }
-  document.addEventListener('visibilitychange', () => {
-    if (!state.active) return;
-    if (document.visibilityState === 'hidden' && state.active.activeSinceMs) {
-      state.active.activeElapsedMs = activeElapsedMs(); state.active.activeSinceMs = null;
-    }
-    if (document.visibilityState === 'visible' && !state.active.activeSinceMs) state.active.activeSinceMs = Date.now();
-  });
   setInterval(() => { const timer = document.querySelector('#timer'); if (timer) timer.textContent = timerText(); }, 1000);
 
   async function initialize() {

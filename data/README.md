@@ -14,7 +14,7 @@
 
 ## 执行顺序
 
-1. 在 Supabase Dashboard 的 SQL Editor 依次执行 `001_supabase_schema.sql` 至 `012_customer_efficiency_active_time.sql`；若旧项目已经执行过前序脚本，只需补执行尚未执行的编号。`001` 可安全重跑：它会补齐早期 `evaluation_runs` 表缺失的冻结评测字段，不会删除历史记录。`010` 仅新增 Evidence 的模型原始复核判断与确定性门禁原因，不会回写历史记录；`011` 仅新增匿名客服提效研究的参与者、分题和提交记录表；`012` 为后续公开实验记录新增浏览器前台作答时长，历史记录保持为空。
+1. 在 Supabase Dashboard 的 SQL Editor 依次执行 `001_supabase_schema.sql` 至 `012_customer_efficiency_active_time.sql`；若旧项目已经执行过前序脚本，只需补执行尚未执行的编号。`001` 可安全重跑：它会补齐早期 `evaluation_runs` 表缺失的冻结评测字段，不会删除历史记录。`010` 仅新增 Evidence 的模型原始复核判断与确定性门禁原因，不会回写历史记录；`011` 仅新增匿名客服提效研究的参与者、分题和提交记录表；`012` 仅保留一个可空的兼容字段，不回写历史记录，也不改变当前冻结的实验台。
 2. 将 API 的 `DATABASE_URL` 指向 Supabase 的 PostgreSQL 连接字符串；保留 `postgresql+psycopg://` 作为 SQLAlchemy 的驱动前缀，并开启 SSL。若本机不支持 IPv6，请在 Supabase Dashboard 的 Connect 中选择 Shared Pooler 的 **Session mode** 连接串，而非直连 `db.*` 主机或 Transaction mode。
 3. 在 `apps/api/.env.local` 填写该变量。应用会优先保留非空的部署环境变量；只有它缺失或为空时才读取该已忽略的本地文件。
 4. 在 `apps/api/.env.local` 再填写仅服务端读取的 `OPENAI_API_KEY`。可选地设置 `OPENAI_MODEL`、`OPENAI_VISION_MODEL` 与对应每百万 token 单价；禁止放入 `apps/web`、`NEXT_PUBLIC_*` 或提交版本控制。

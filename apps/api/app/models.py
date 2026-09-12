@@ -372,7 +372,6 @@ class CustomerEfficiencyRecord(Base):
     started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     completed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
     duration_seconds: Mapped[int] = mapped_column(Integer)
-    active_duration_seconds: Mapped[int | None] = mapped_column(Integer, nullable=True)
     source_actions_json: Mapped[str] = mapped_column(Text, default="[]")
     source_fields_viewed_json: Mapped[str] = mapped_column(Text, default="[]")
     decision_package_ready_fields_json: Mapped[str] = mapped_column(Text, default="[]")

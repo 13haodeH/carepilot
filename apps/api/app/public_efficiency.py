@@ -276,9 +276,6 @@ def submit_task(db: Session, participant_id: str, task_id: str, body: PublicEffi
 
     started_at = _as_utc(assignment.started_at)
     completed_at = datetime.now(UTC)
-    duration_seconds = max(0, round((completed_at - started_at).total_seconds()))
-    if body.active_duration_seconds is not None and body.active_duration_seconds > duration_seconds + 5:
-        raise HTTPException(status_code=422, detail="实际作答时长不能超过本题已开始的时间。")
     record = CustomerEfficiencyRecord(
         participant_id=participant_id,
         assignment_id=assignment.id,
@@ -294,8 +291,7 @@ def submit_task(db: Session, participant_id: str, task_id: str, body: PublicEffi
         outcome_correct=body.selected_outcome == pair["target_outcome"],
         started_at=started_at,
         completed_at=completed_at,
-        duration_seconds=duration_seconds,
-        active_duration_seconds=min(body.active_duration_seconds, duration_seconds) if body.active_duration_seconds is not None else None,
+        duration_seconds=max(0, round((completed_at - started_at).total_seconds())),
         source_actions_json=json.dumps(body.source_actions, ensure_ascii=False),
         source_fields_viewed_json=json.dumps(source_fields_viewed, ensure_ascii=False),
         decision_package_ready_fields_json=json.dumps(ready_fields if assignment.condition == "DECISION_PACKAGE" else [], ensure_ascii=False),
